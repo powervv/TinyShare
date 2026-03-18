@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyShare | 极简共享</title>
+    <meta name="description" content="TinyShare 是一款高端轻量级文本和文件共享工具。">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="glass-panel header">
+            <div class="logo">
+                <span class="logo-icon">✨</span>
+                <h1>TinyShare</h1>
+            </div>
+            <div class="session-info">
+                <span>房间: <strong id="token-display">连接中...</strong></span>
+                <button id="copy-link" class="btn-icon" title="复制链接">📋</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="messages-section glass-panel">
+                <div class="section-header">
+                    <h2>💬 消息面板</h2>
+                </div>
+                <div class="messages-list" id="messages-list">
+                    <!-- 动态生成 -->
+                </div>
+                <div class="message-input-area">
+                    <textarea id="message-input" placeholder="输入你想分享的内容 (按 Enter 直接发布)..." rows="3"></textarea>
+                    <button id="send-btn" class="btn-primary">发送消息</button>
+                </div>
+            </section>
+
+            <section class="files-section glass-panel">
+                <div class="section-header">
+                    <h2>📁 文件云盘</h2>
+                </div>
+                <div class="upload-area" id="drop-zone">
+                    <div class="upload-prompt">
+                        <span class="upload-icon">☁️</span>
+                        <p>将文件拖拽至此，或 <strong>点击选择文件</strong></p>
+                        <input type="file" id="file-input" multiple hidden>
+                    </div>
+                </div>
+                <div class="files-list" id="files-list">
+                    <!-- 动态生成 -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>
