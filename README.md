@@ -33,5 +33,20 @@ node server.js
 ### 4. 访问系统
 服务默认运行在 `3000` 端口。请在浏览器中访问：[http://localhost:3000](http://localhost:3000)
 
+## 🐳 Linux 服务器部署 (Docker 推荐)
+本项目已内置完整的 Docker 配置，在您的 Linux 服务器上直接部署只需两步：
+
+1. 将代码克隆到您的服务器：
+```bash
+git clone git@github.com:powervv/TinyShare.git
+cd TinyShare
+```
+
+2. 使用 Docker Compose 在后台一键启动服务：
+```bash
+docker-compose up -d
+```
+现在您可以直接通过服务器的 `IP:3000` 访问应用了！（请确保防火墙或安全组已放行 3000 端口）。您的所有共享数据会被持久化映射在服务器本地的 `data/` 目录中，即使重启容器也不会丢失文件。
+
 ---
 *Built with ❤️ via Node.js + Express.*
